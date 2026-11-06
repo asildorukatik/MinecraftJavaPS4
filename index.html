@@ -258,7 +258,7 @@
  const textEncoder=new TextEncoder();
  function nbtProfile(username,skinName,model,pixels){
   if(!/^[A-Za-z0-9_]{3,16}$/.test(username)) throw Error('Username must be 3-16 letters, digits or underscores');
-  if(!(pixels instanceof Uint8Array)||pixels.length!==16384) throw Error('Skin must have 64x64 ARGB pixel data');
+  if(!(pixels instanceof Uint8Array)||pixels.length!==16384) throw Error('Skin must have 64x64 ABGR pixel data');
   const bytes=[];
   const u8=n=>bytes.push(n&255);
   const i16=n=>{u8(n>>>8);u8(n)};
@@ -317,14 +317,16 @@
     if(typeof global.EaglerModel3D?.expandLegacyImage !== 'function')throw Error('Legacy skin conversion unavailable');
     global.EaglerModel3D.expandLegacyImage(img,canvas);
   }
-  const rgba=ctx.getImageData(0,0,64,64).data, argb=new Uint8Array(16384);
+  // EaglercraftX custom skin bytes are ABGR8, not ARGB8.
+  // The previous ARGB encoder swapped red/blue, making skins look blue.
+  const rgba=ctx.getImageData(0,0,64,64).data, abgr=new Uint8Array(16384);
   for(let i=0;i<4096;i++){
    const k=i*4;
-   argb[k]=rgba[k+3];argb[k+1]=rgba[k];argb[k+2]=rgba[k+1];argb[k+3]=rgba[k+2];
+   abgr[k]=rgba[k+3];abgr[k+1]=rgba[k+2];abgr[k+2]=rgba[k+1];abgr[k+3]=rgba[k];
   }
   // EaglercraftX sanitizes the opaque torso and upper legs on custom skins.
-  for(let y=20;y<32;y++)for(let x=16;x<40;x++)argb[(y*64+x)*4]=255;
-  return argb;
+  for(let y=20;y<32;y++)for(let x=16;x<40;x++)abgr[(y*64+x)*4]=255;
+  return abgr;
  }
  async function writeProfile(profile){
   const pixels=await decodeSkin(profile.skin);
