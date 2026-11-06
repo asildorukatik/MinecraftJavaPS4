@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "versions": [
+    {
+      "id": "1.8.8",
+      "title": "Eaglercraft 1.8.8",
+      "entry": "1.8.8/Eaglercraft-1-8-JavaScript-Controller.html",
+      "totalBytes": 34889822,
+      "files": [
+        {
+          "path": "1.8.8/Eaglercraft-1-8-JavaScript-Controller.html",
+          "bytes": 34889822,
+          "sha256": "6300392102d6bbb897e49764fa81409a1b3e7fe776f8694bb4c0fd23e2bef5a1"
+        }
+      ]
+    },
+    {
+      "id": "1.12.2",
+      "title": "Eaglercraft 1.12.2",
+      "entry": "1.12.2/Eaglercraft-1-12-JavaScript-Controller.html",
+      "totalBytes": 42945043,
+      "files": [
+        {
+          "path": "1.12.2/Eaglercraft-1-12-JavaScript-Controller.html",
+          "bytes": 42945043,
+          "sha256": "ca21264e3d603cf491b9da0b84f1dee41debb6cc3acbcfd07c2852dbd4b1a211"
+        }
+      ]
+    },
+    {
+      "id": "26.2",
+      "title": "Eaglercraft 26.2",
+      "entry": "26.2/Eaglercraft-26.2-Zeus-Controller-v3.html",
+      "totalBytes": 75605835,
+      "files": [
+        {
+          "path": "26.2/Eaglercraft-26.2-Zeus-Controller-v3.html",
+          "bytes": 75605835,
+          "sha256": "29a1f8e21086d9d1ac52e6ef14b749745498d54f7b3bb94ca91fbead99ca45c9"
+        }
+      ]
+    },
+    {
+      "id": "26.3",
+      "title": "Eaglercraft 26.3",
+      "entry": "26.3/Eaglercraft-26.3-Controller.html",
+      "totalBytes": 77562435,
+      "files": [
+        {
+          "path": "26.3/Eaglercraft-26.3-Controller.html",
+          "bytes": 77562435,
+          "sha256": "5d7f8470442204c99d4b1c7ebd976ca31349dafa1c9ef825da494fb825f61c72"
+        }
+      ]
+    }
+  ],
+  "catalogRevision": "1964e21cc5a6ae9cdad3e04cc999436431c9055026555e669cd77b9a9b854b29"
+}
